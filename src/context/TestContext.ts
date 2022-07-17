@@ -4,27 +4,12 @@ import UiClient from 'uiClient';
 import Pages from 'pages';
 
 export default class TestContext extends World {
-  private _uiClient: UiClient;
-
-  private _restClient: RestClient;
   private _value: unknown;
 
   constructor(options: IWorldOptions) {
     super(options);
-    this._uiClient = new UiClient();
-    this._restClient = new RestClient();
-  }
-
-  get oneMail(): Pages {
-    return new Pages(this._uiClient.page);
-  }
-
-  get UiClient(): UiClient {
-    return this._uiClient;
-  }
-
-  get restClient(): RestClient {
-    return this._restClient;
+    global.restClient = new RestClient();
+    global.uiClient = new UiClient();
   }
 
   get value(): unknown {
@@ -40,5 +25,6 @@ setWorldConstructor(TestContext);
 declare global {
   var oneMail: Pages;
   var restClient: RestClient;
+  var uiClient: UiClient;
   var testContext: TestContext;
 }

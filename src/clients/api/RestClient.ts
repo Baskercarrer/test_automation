@@ -10,7 +10,7 @@ export default class RestClient {
     return this._lastResponse;
   }
 
-  async initRestClient(config: ApiConfig) {
+  async init(config: ApiConfig) {
     this.apiContext = await request.newContext({
       ignoreHTTPSErrors: true,
       baseURL: config.baseUrl,

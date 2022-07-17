@@ -1,5 +1,5 @@
+import Environment, { UiConfig } from '@utils/Environment';
 import { Page, chromium } from 'playwright';
-import Environment from '@utils/Environment';
 
 export default class UiClient {
   private _page: Page;
@@ -7,11 +7,13 @@ export default class UiClient {
   get page(): Page {
     return this._page;
   }
-  async init(browserName: string) {
+
+  async init(uiConfig: UiConfig) {
     const browser = await chromium.launch({
-      headless: false,
-      channel: browserName,
+      headless: uiConfig.headless,
+      channel: uiConfig.browser,
     });
+
     const context = await browser.newContext({
       baseURL: Environment.getUiConfig.baseUrl,
       viewport: { height: 1060, width: 1920 },

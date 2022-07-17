@@ -1,4 +1,4 @@
-import { AfterStep, Before, setDefaultTimeout } from '@cucumber/cucumber';
+import { AfterStep, Before, Status, setDefaultTimeout } from '@cucumber/cucumber';
 import Environment from '@utils/Environment';
 import TestContext from 'testContext';
 
@@ -8,19 +8,17 @@ Before(function (this: TestContext) {
   global.testContext = this as TestContext;
 });
 
-Before('@ui', async function (this: TestContext) {
-  await this.UiClient.init('chrome');
-  global.oneMail = this.oneMail;
+Before('@ui', async function () {
+  await uiClient.init(Environment.getUiConfig);
 });
 
-Before('@api', async function (this: TestContext) {
-  await this.restClient.initRestClient(Environment.getApiConfig);
-  global.restClient = this.restClient;
+Before('@api', async function () {
+  await restClient.init(Environment.getApiConfig);
 });
 
 AfterStep('@ui', async function (this: TestContext, scenario) {
-  if (scenario.result.status === 'FAILED') {
-    this.attach(await this.UiClient.screenshot(), 'base64:image/png');
-    await this.UiClient.close();
+  if (scenario.result.status === Status.FAILED) {
+    this.attach(await uiClient.screenshot(), 'base64:image/png');
+    await uiClient.close();
   }
 });
