@@ -26,8 +26,8 @@ class Environment {
       headless: false,
     },
     apiConfig: {
-      baseUrl: 'http://parabank.parasoft.com/parabank/services/bank',
-      defaultHeaders: { Accept: '*', 'Content-Type': 'application/json' },
+      baseUrl: 'http://parabank.parasoft.com/parabank/services/bank/',
+      defaultHeaders: { Accept: 'application/json' },
     },
   };
 

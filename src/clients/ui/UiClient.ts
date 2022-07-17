@@ -6,7 +6,7 @@ export default class UiClient {
   private _page: Page;
   async init(uiConfig: UiConfig) {
     const browser = await chromium.launch({
-      headless: uiConfig.headless ? true : false,
+      headless: uiConfig.headless,
       channel: uiConfig.browser,
       args: ['--start-maximized'],
     });
