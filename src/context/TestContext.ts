@@ -23,7 +23,7 @@ export default class TestContext extends World {
 setWorldConstructor(TestContext);
 
 declare global {
-  var oneMail: Pages;
+  var paraBank: Pages;
   var restClient: RestClient;
   var uiClient: UiClient;
   var testContext: TestContext;

@@ -1,4 +1,4 @@
-import { AfterStep, Before, Status, setDefaultTimeout } from '@cucumber/cucumber';
+import { After, AfterStep, Before, Status, setDefaultTimeout } from '@cucumber/cucumber';
 import Environment from '@utils/Environment';
 import TestContext from 'testContext';
 
@@ -14,6 +14,9 @@ Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
 
 Before({ tags: '@api', name: 'Initialize API Client' }, async function () {
   await restClient.init(Environment.getApiConfig);
+});
+After({ tags: '@ui', name: 'Closing UI Instance' }, async function () {
+  await uiClient.close();
 });
 
 AfterStep('@ui', async function (this: TestContext, scenario) {

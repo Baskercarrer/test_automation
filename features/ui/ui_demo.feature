@@ -1,10 +1,16 @@
 @ui
-Feature: Test mail one menu bar section
-  Verfies mail one menu bar basic functionality.
+Feature: Login Functionality
 
-  Rule: The sections should contains relevant details.
+Business Need: In order to access banking services with user identity
 
-    Example: Verify news details
-      Given the homepage
-      When user navigate to news page
-      Then news details are displayed
+  Scenario: Verify login functionality with valid credentials
+    Given the homepage
+    When user login with valid credentials
+    Then account overview page should display
+
+  Scenario: Check account details
+    Given account overview page
+    When user clicks on account number
+    Then account details page should display
+
+

@@ -19,10 +19,15 @@ interface EnvironmentDetails {
 
 class Environment {
   private dev: EnvironmentDetails = {
-    uiConfig: { baseUrl: 'https://www.dailymail.co.uk/', timeout: 180000, browser: 'chrome', headless: false },
+    uiConfig: {
+      baseUrl: 'https://parabank.parasoft.com',
+      timeout: 30000,
+      browser: 'chrome',
+      headless: false,
+    },
     apiConfig: {
-      baseUrl: 'https://reqbin.com/',
-      defaultHeaders: { Accept: '*' },
+      baseUrl: 'http://parabank.parasoft.com/parabank/services/bank',
+      defaultHeaders: { Accept: '*', 'Content-Type': 'application/json' },
     },
   };
 

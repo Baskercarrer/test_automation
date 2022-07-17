@@ -14,6 +14,7 @@ export default class RestClient {
     this.apiContext = await request.newContext({
       ignoreHTTPSErrors: true,
       baseURL: config.baseUrl,
+      extraHTTPHeaders: config.defaultHeaders,
     });
   }
 
@@ -21,7 +22,6 @@ export default class RestClient {
     this._lastResponse = await this.apiContext.get(`.${endPoint}`, {
       params: queryParams,
     });
-    console.log(await this._lastResponse.json());
   }
 
   async post(endPoint: string, data: unknown, queryParams?: Record<string, string | number | boolean>) {

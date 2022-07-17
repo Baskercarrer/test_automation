@@ -1,7 +1,7 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 
-Given('the rest api', function (doc: string) {
+Given('the parabank rest api', function (doc: string) {
   console.log('Doc' + doc);
 });
 

@@ -21,8 +21,8 @@
         ],
         "tags": "not @ignore",
         "worldParameters": {
-            "browser": "chrome",
-            "headless": true
+            "username": "bhaslamb",
+            "password": "bhaslamb"
         },
         "retry": 0
     },
@@ -37,7 +37,7 @@
             "colorsEnabled": true
         },
         "paths": [
-            "features/**/*.feature"
+            "features/api/*.feature"
         ],
         "requireModule": [
             "ts-node/register"
@@ -64,7 +64,7 @@
             "colorsEnabled": true
         },
         "paths": [
-            "features/**/*.feature"
+            "features/ui/*.feature"
         ],
         "requireModule": [
             "ts-node/register"
