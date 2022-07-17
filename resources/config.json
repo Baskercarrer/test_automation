@@ -25,7 +25,62 @@
             "browser": "chrome",
             "headless": true
         },
-        "retry": 0,
-        "publishQuiet": true
+        "retry": 0
+    },
+    "api": {
+        "parallel": 2,
+        "format": [
+            "summary",
+            "json:output/cucumber-report/output.json",
+            "html:output/cucumber-report/index.html",
+            "@cucumber/pretty-formatter"
+        ],
+        "formatOptions": {
+            "colorsEnabled": true
+        },
+        "paths": [
+            "features/**/*.feature"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "./src/stepdefs/**/*.ts",
+            "./src/context/*.ts"
+        ],
+        "tags": "@api and not @ignore",
+        "worldParameters": {
+            "browser": "chrome",
+            "headless": true
+        },
+        "retry": 0
+    },
+    "ui": {
+        "parallel": 2,
+        "format": [
+            "summary",
+            "json:output/cucumber-report/output.json",
+            "html:output/cucumber-report/index.html",
+            "@cucumber/pretty-formatter"
+        ],
+        "formatOptions": {
+            "colorsEnabled": true
+        },
+        "paths": [
+            "features/**/*.feature"
+        ],
+        "requireModule": [
+            "ts-node/register"
+        ],
+        "require": [
+            "./src/stepdefs/**/*.ts",
+            "./src/context/*.ts"
+        ],
+        "tags": "@ui and not @ignore",
+        "worldParameters": {
+            "browser": "chrome",
+            "headless": true
+        },
+        "retry": 0
     }
 }
