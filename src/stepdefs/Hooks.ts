@@ -8,11 +8,11 @@ Before(function (this: TestContext) {
   global.testContext = this as TestContext;
 });
 
-Before('@ui', async function () {
+Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
   await uiClient.init(Environment.getUiConfig);
 });
 
-Before('@api', async function () {
+Before({ tags: '@api', name: 'Initialize API Client' }, async function () {
   await restClient.init(Environment.getApiConfig);
 });
 
