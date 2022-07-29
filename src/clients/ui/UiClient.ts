@@ -15,7 +15,7 @@ export default class UiClient {
       baseURL: Environment.getUiConfig.baseUrl,
       viewport: null,
     });
-    context.setDefaultTimeout(Environment.getUiConfig.timeout);
+    context.setDefaultTimeout(uiConfig.timeout);
     this._page = await context.newPage();
     global.paraBank = new Pages(this._page);
   }
