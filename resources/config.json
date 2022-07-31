@@ -21,8 +21,8 @@
         ],
         "tags": "not @ignore",
         "worldParameters": {
-            "username": "bhaslamb",
-            "password": "bhaslamb"
+            "username": "test",
+            "password": "test"
         },
         "retry": 0
     },

@@ -4,7 +4,7 @@ import TestContext from 'testContext';
 
 setDefaultTimeout(180000);
 
-Before(function (this: TestContext) {
+Before({ name: 'Initialize Test context' }, function (this: TestContext) {
   global.testContext = this as TestContext;
 });
 
@@ -19,7 +19,7 @@ After({ tags: '@ui', name: 'Closing UI Instance' }, async function () {
   await uiClient.close();
 });
 
-AfterStep('@ui', async function (this: TestContext, scenario) {
+AfterStep({ tags: '@ui' }, async function (this: TestContext, scenario) {
   if (scenario.result.status === Status.FAILED) {
     this.attach(await uiClient.screenshot(), 'base64:image/png');
     await uiClient.close();

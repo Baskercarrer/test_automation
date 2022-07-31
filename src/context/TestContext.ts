@@ -1,7 +1,7 @@
 import { IWorldOptions, World, setWorldConstructor } from '@cucumber/cucumber';
+import Pages from 'pages';
 import RestClient from 'restClient';
 import UiClient from 'uiClient';
-import Pages from 'pages';
 
 export default class TestContext extends World {
   private _value: unknown;
@@ -10,6 +10,7 @@ export default class TestContext extends World {
     super(options);
     global.restClient = new RestClient();
     global.uiClient = new UiClient();
+    global.paraBank = new Pages();
   }
 
   get value(): unknown {

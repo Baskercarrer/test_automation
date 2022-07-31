@@ -1,9 +1,14 @@
 import Environment, { UiConfig } from '@utils/Environment';
 import { Page, chromium } from 'playwright';
-import Pages from 'pages';
 
 export default class UiClient {
   private _page: Page;
+
+  get page() {
+    return this._page;
+  }
+
+
   async init(uiConfig: UiConfig) {
     const browser = await chromium.launch({
       headless: uiConfig.headless,
@@ -17,7 +22,6 @@ export default class UiClient {
     });
     context.setDefaultTimeout(uiConfig.timeout);
     this._page = await context.newPage();
-    global.paraBank = new Pages(this._page);
   }
 
   async close() {
