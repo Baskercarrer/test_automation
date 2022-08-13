@@ -7,7 +7,7 @@
     "cucumberautocomplete.steps": [
         "src/stepdefs/**/*.ts"
     ],
-    "cucumberautocomplete.syncfeatures": "features/**/*feature",
+    "cucumberautocomplete.syncfeatures": "resources/features/**/*feature",
     "cucumberautocomplete.strictGherkinCompletion": true,
     "cucumberautocomplete.strictGherkinValidation": true,
     "cucumberautocomplete.onTypeFormat": true,

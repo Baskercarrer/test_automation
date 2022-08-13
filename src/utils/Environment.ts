@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import lodash from 'lodash';
 
 export interface UiConfig {
   baseUrl: string;
@@ -31,13 +32,17 @@ class Environment {
     },
   };
   get getApiConfig(): ApiConfig {
-    return this['dev'].apiConfig;
+    return this.getEnv.apiConfig;
+  }
+
+  get getEnv(): EnvironmentDetails {
+    return process.env['env']?.toLowerCase() === 'dev' ? this.dev : this.dev;
   }
 
   public getUiConfig(browser?: string, headless?: boolean): UiConfig {
-    this['dev'].uiConfig.browser = browser;
-    this['dev'].uiConfig.headless = headless;
-    return this.dev.uiConfig;
+    this.getEnv.uiConfig.browser = browser;
+    this.getEnv.uiConfig.headless = headless;
+    return this.getEnv.uiConfig;
   }
 
   async convertVideoToBase64(filePath: string) {

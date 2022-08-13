@@ -8,7 +8,7 @@
     "compile": "npx tsc --build --clean && npx tsc --build",
     "lint": "eslint . --ext .ts",
     "eslint-fix": "eslint . --ext .ts --fix",
-    "pretest": "npm run compile && rimraf cucumber-report && mkdirp cucumber-report/",
+    "pretest": "npm run compile && rimraf cucumber-report && mkdirp cucumber-report",
     "test": "cucumber-js -c resources/config.json"
   },
   "keywords": [

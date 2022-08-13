@@ -3,7 +3,6 @@ import Environment from '@utils/Environment';
 import TestContext from 'testContext';
 
 setDefaultTimeout(180000);
-
 Before({ name: 'Initialize Test context' }, function (this: TestContext) {
   global.testContext = this as TestContext;
 });

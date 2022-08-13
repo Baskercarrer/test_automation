@@ -3,6 +3,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "noImplicitAny": true,
+    "noEmitOnError": true,
     "experimentalDecorators": true,
     "outDir": "build",
     "module": "CommonJS",
