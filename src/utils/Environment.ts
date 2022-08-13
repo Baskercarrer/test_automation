@@ -30,13 +30,14 @@ class Environment {
       defaultHeaders: { Accept: 'application/json' },
     },
   };
-
-  public get getUiConfig(): UiConfig {
-    return this['dev'].uiConfig;
-  }
-
   get getApiConfig(): ApiConfig {
     return this['dev'].apiConfig;
+  }
+
+  public getUiConfig(browser?: string, headless?: boolean): UiConfig {
+    this['dev'].uiConfig.browser = browser;
+    this['dev'].uiConfig.headless = headless;
+    return this.dev.uiConfig;
   }
 
   async convertVideoToBase64(filePath: string) {

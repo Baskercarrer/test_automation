@@ -1,6 +1,6 @@
-import AccountDetails from '@onemail/AccountDetails';
-import AccountOverview from '@onemail/AccountOverview';
-import Homepage from '@onemail/Homepage';
+import AccountDetails from 'pages/parabank/AccountDetails';
+import AccountOverview from 'pages/parabank/AccountOverview';
+import Homepage from 'pages/parabank/Homepage';
 
 export default class Pages {
   get homepage(): Homepage {

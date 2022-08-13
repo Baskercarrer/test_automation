@@ -1,5 +1,5 @@
-import Environment, { UiConfig } from '@utils/Environment';
 import { Page, chromium } from 'playwright';
+import { UiConfig } from '@utils/Environment';
 
 export default class UiClient {
   private _page: Page;
@@ -7,7 +7,6 @@ export default class UiClient {
   get page() {
     return this._page;
   }
-
 
   async init(uiConfig: UiConfig) {
     const browser = await chromium.launch({
@@ -17,7 +16,7 @@ export default class UiClient {
     });
 
     const context = await browser.newContext({
-      baseURL: Environment.getUiConfig.baseUrl,
+      baseURL: uiConfig.baseUrl,
       viewport: null,
     });
     context.setDefaultTimeout(uiConfig.timeout);

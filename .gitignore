@@ -1,3 +1,4 @@
 /node_modules
-/output
+/cucumber-report
 /package-lock.json
+/build

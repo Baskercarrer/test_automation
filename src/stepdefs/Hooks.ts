@@ -9,7 +9,7 @@ Before({ name: 'Initialize Test context' }, function (this: TestContext) {
 });
 
 Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
-  await uiClient.init(Environment.getUiConfig);
+  await uiClient.init(Environment.getUiConfig(this.parameters['browser'], this.parameters['headless']));
 });
 
 Before({ tags: '@api', name: 'Initialize API Client' }, async function () {

@@ -41,8 +41,8 @@
       "pages": [
         "./pages/Pages"
       ],
-      "@onemail/*": [
-        "./pages/one_mail/*"
+      "@app/*": [
+        "./pages/parabank/*"
       ]
     }
   },
@@ -50,8 +50,7 @@
     "node_modules"
   ],
   "include": [
-    "src/**/*.ts",
-    "Reporter.ts"
+    "src/**/*.ts"
   ],
   "ts-node": {
     "require": [

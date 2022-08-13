@@ -19,8 +19,8 @@ When('user clicks on account number', async function login() {
 });
 
 Then('account overview page should display', async function () {
-  await expect(paraBank.accountOverview.title()).toBeVisible();
+  await expect(paraBank.accountOverview.title).toBeVisible();
 });
 Then('account details page should display', async function () {
-  await expect(paraBank.accountDetails.title()).toBeVisible();
+  await expect(paraBank.accountDetails.title).toBeVisible();
 });

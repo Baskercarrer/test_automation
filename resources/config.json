@@ -3,8 +3,8 @@
         "parallel": 2,
         "format": [
             "summary",
-            "json:output/cucumber-report/output.json",
-            "html:output/cucumber-report/index.html"
+            "json:cucumber-report/report.json",
+            "html:cucumber-report/index.html"
         ],
         "formatOptions": {
             "colorsEnabled": true
@@ -21,8 +21,10 @@
         ],
         "tags": "not @ignore",
         "worldParameters": {
-            "username": "test",
-            "password": "test"
+            "username": "admin",
+            "password": "admin",
+            "headless": true,
+            "browser": "chrome"
         },
         "retry": 0
     },
@@ -30,8 +32,8 @@
         "parallel": 2,
         "format": [
             "summary",
-            "json:output/cucumber-report/output.json",
-            "html:output/cucumber-report/index.html"
+            "json:cucumber-report/apiReport.json",
+            "html:cucumber-report/index.html"
         ],
         "formatOptions": {
             "colorsEnabled": true
@@ -57,8 +59,8 @@
         "parallel": 2,
         "format": [
             "summary",
-            "json:output/cucumber-report/output.json",
-            "html:output/cucumber-report/index.html"
+            "json:cucumber-report/uiReport.json",
+            "html:cucumber-report/index.html"
         ],
         "formatOptions": {
             "colorsEnabled": true

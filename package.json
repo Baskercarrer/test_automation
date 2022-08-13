@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install",
+    "compile": "npx tsc --build --clean && npx tsc --build",
     "lint": "eslint . --ext .ts",
     "eslint-fix": "eslint . --ext .ts --fix",
-    "pretest": "rimraf output && mkdirp output/cucumber-report/",
+    "pretest": "npm run compile && rimraf cucumber-report && mkdirp cucumber-report/",
     "test": "cucumber-js -c resources/config.json"
   },
   "keywords": [
@@ -19,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^8.5.1",
-    "@playwright/test": "^1.24.2",
+    "@playwright/test": "^1.25.0",
     "@types/chai": "^4.3.1",
     "@types/deep-equal-in-any-order": "1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
@@ -31,7 +32,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "mkdirp": "1.0.4",
-    "playwright": "1.24.2",
+    "playwright": "1.25.0",
     "prettier": "^2.7.1",
     "rimraf": "3.0.2",
     "ts-node": "10.9.1",
