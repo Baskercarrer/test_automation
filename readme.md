@@ -2,9 +2,9 @@ Introduction
 
 - Perform E2E test with this project for web application. It help you to directly build the gherkin style testcases without creating the helpers.
 
-Usage:
+How to write scenarios:
 
-- For understanding go through the examples which are created for API and UI cases using parabank test app.
+- For better understanding, please go through the UI and API scenario examples under the resouces/feature directory.
 
 Modules involved:
 
