@@ -14,6 +14,7 @@ Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
 Before({ tags: '@api', name: 'Initialize API Client' }, async function () {
   await restClient.init(Environment.getApiConfig);
 });
+
 After({ tags: '@ui', name: 'Closing UI Instance' }, async function () {
   await uiClient.close();
 });
