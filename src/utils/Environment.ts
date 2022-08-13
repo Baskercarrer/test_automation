@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import lodash from 'lodash';
 
 export interface UiConfig {
   baseUrl: string;
