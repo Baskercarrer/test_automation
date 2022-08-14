@@ -4,7 +4,7 @@
   "description": "Test Automation Project",
   "main": "index.js",
   "scripts": {
-    "build": "npm install",
+    "build": "npm ci",
     "compile": "npx tsc --build --clean && npx tsc --build",
     "lint": "eslint . --ext .ts",
     "eslint-fix": "eslint . --ext .ts --fix",
