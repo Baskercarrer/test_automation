@@ -27,8 +27,8 @@ export default class UiClient {
     await this._page.context().close();
   }
 
-  async screenshot() {
-    const screenshot = await this._page.screenshot({ fullPage: false });
+  async screenshot(fullPage?: boolean) {
+    const screenshot = await this._page.screenshot({ fullPage: fullPage });
     return screenshot.toString('base64');
   }
 }

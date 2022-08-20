@@ -30,4 +30,17 @@ export default class RestClient {
       params: queryParams,
     });
   }
+
+  async put(endPoint: string, data: unknown, queryParams?: Record<string, string | number | boolean>) {
+    this._lastResponse = await this.apiContext.put(`.${endPoint}`, {
+      data: data,
+      params: queryParams,
+    });
+  }
+
+  async delete(endPoint: string, queryParams?: Record<string, string | number | boolean>) {
+    this._lastResponse = await this.apiContext.delete(`.${endPoint}`, {
+      params: queryParams,
+    });
+  }
 }
