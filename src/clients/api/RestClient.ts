@@ -10,6 +10,10 @@ export default class RestClient {
     return this._lastResponse;
   }
 
+  async lastResponseBodyAsString() {
+    return JSON.stringify(JSON.parse((await this._lastResponse.body()).toString('utf-8')), null, 2);
+  }
+
   async init(config: ApiConfig) {
     this.apiContext = await request.newContext({
       ignoreHTTPSErrors: true,

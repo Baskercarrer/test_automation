@@ -1,5 +1,5 @@
 import { Page } from 'playwright';
-export default class CommonPage {
+export default class Common {
   protected typeDelay = 100;
   protected _page: Page;
   constructor(protected page: Page) {

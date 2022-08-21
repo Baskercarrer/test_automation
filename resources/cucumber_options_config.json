@@ -22,18 +22,16 @@
         ],
         "tags": "not @ignore",
         "worldParameters": {
-            "username": "admin",
-            "password": "admin",
             "headless": true,
             "browser": "chrome"
         },
         "retry": 0
     },
     "api": {
-        "parallel": 2,
+        "parallel": 1,
         "format": [
             "summary",
-            "progress-bar",
+            "@cucumber/pretty-formatter",
             "json:cucumber-report/apiReport.json",
             "html:cucumber-report/index.html"
         ],
@@ -51,17 +49,14 @@
             "./src/context/*.ts"
         ],
         "tags": "@api and not @ignore",
-        "worldParameters": {
-            "browser": "chrome",
-            "headless": true
-        },
+        "worldParameters": {},
         "retry": 0
     },
     "ui": {
-        "parallel": 2,
+        "parallel": 1,
         "format": [
             "summary",
-            "progress-bar",
+            "@cucumber/pretty-formatter",
             "json:cucumber-report/uiReport.json",
             "html:cucumber-report/index.html"
         ],
@@ -81,7 +76,7 @@
         "tags": "@ui and not @ignore",
         "worldParameters": {
             "browser": "chrome",
-            "headless": true
+            "headless": false
         },
         "retry": 0
     }

@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .ts",
     "eslint-fix": "eslint . --ext .ts --fix",
     "pretest": "npm run compile && rimraf cucumber-report && mkdirp cucumber-report",
-    "test": "cucumber-js -c resources/config.json"
+    "test": "cucumber-js -c resources/cucumber_options_config.json",
+    "debug": "set DEBUG=pw:api && cucumber-js -c resources/cucumber_options_config.json"
   },
   "keywords": [
     "E2E",
@@ -20,6 +21,7 @@
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^8.5.1",
+    "@cucumber/pretty-formatter": "1.0.0",
     "@playwright/test": "^1.25.0",
     "@types/chai": "^4.3.3",
     "@types/deep-equal-in-any-order": "1.0.1",

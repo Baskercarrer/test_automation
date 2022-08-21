@@ -20,13 +20,13 @@ interface EnvironmentDetails {
 class Environment {
   private dev: EnvironmentDetails = {
     uiConfig: {
-      baseUrl: 'https://parabank.parasoft.com',
+      baseUrl: 'https://magento.softwaretestingboard.com/',
       timeout: 30000,
       browser: 'chrome',
       headless: false,
     },
     apiConfig: {
-      baseUrl: 'http://parabank.parasoft.com/parabank/services/bank/',
+      baseUrl: 'https://reqres.in/api/',
       defaultHeaders: { Accept: 'application/json' },
     },
   };
