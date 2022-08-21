@@ -4,7 +4,7 @@
     "format": ["summary", "progress-bar", "json:cucumber-report/report.json", "html:cucumber-report/index.html"],
     "paths": ["resources/features/**/*.feature"],
     "requireModule": ["ts-node/register"],
-    "require": ["./src/stepdefs/**/*.ts", "./src/context/*.ts"],
+    "require": ["./src/context/*.ts", "./src/stepdefs/**/*.ts"],
     "tags": "not @ignore",
     "worldParameters": {
       "headless": true,
@@ -19,7 +19,7 @@
     "format": ["summary", "@cucumber/pretty-formatter", "json:cucumber-report/apiReport.json", "html:cucumber-report/index.html"],
     "paths": ["resources/features/api/*.feature"],
     "requireModule": ["ts-node/register"],
-    "require": ["./src/stepdefs/**/*.ts", "./src/context/*.ts"],
+    "require": ["./src/context/*.ts", "./src/stepdefs/**/*.ts"],
     "tags": "@api and not @ignore",
     "worldParameters": {},
     "retry": 0

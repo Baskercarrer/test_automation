@@ -1,8 +1,8 @@
 import { Given, Then, When } from '@cucumber/cucumber';
-import Homepage from 'pages/luma/Home';
+import Home from 'pages/luma/Home';
 import { expect } from '@playwright/test';
 
-let homepage: Homepage;
+let homepage: Home;
 Given('the homepage', async function () {
   homepage = luma.homepage;
   await homepage.load();

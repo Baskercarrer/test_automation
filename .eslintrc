@@ -25,7 +25,6 @@
         "prettier/prettier": "off",
         "eqeqeq": "error",
         "no-else-return": "error",
-        "no-unused-expressions": "error",
         "arrow-spacing": "error",
         "comma-spacing": "error",
         "getter-return": "error",

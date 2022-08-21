@@ -25,5 +25,5 @@ Then('response status code should be {int}', function (statusCode: number) {
 });
 
 Then('response body should not be empty', async function () {
-  expect(await restClient.lastResponse.body()).not.toContain('');
+  chai.expect(await restClient.lastResponse.body()).not.to.be.empty;
 });
