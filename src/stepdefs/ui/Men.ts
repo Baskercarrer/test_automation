@@ -1,5 +1,5 @@
 import { Then, When } from '@cucumber/cucumber';
-import Men from 'pages/luma/Men';
+import Men from '@app/Men';
 import { expect } from '@playwright/test';
 
 let men: Men;

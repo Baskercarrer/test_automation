@@ -1,5 +1,5 @@
 import { Given, Then, When } from '@cucumber/cucumber';
-import Home from 'pages/luma/Home';
+import Home from '@app/Home';
 import { expect } from '@playwright/test';
 
 let homepage: Home;
