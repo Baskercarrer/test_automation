@@ -1,5 +1,6 @@
 import { After, AfterStep, Before, Status, setDefaultTimeout } from '@cucumber/cucumber';
 import Environment from '@utils/Environment';
+import Pages from 'pages';
 import TestContext from 'testContext';
 
 setDefaultTimeout(180000);
@@ -9,6 +10,7 @@ Before({ name: 'Initialize Test context' }, function (this: TestContext) {
 
 Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
   await uiClient.init(Environment.getUiConfig(this.parameters['browser'], this.parameters['headless']));
+  app = new Pages(uiClient.page);
 });
 
 Before({ tags: '@api', name: 'Initialize API Client' }, async function () {

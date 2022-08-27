@@ -1,12 +1,16 @@
+/* eslint-disable no-var */
 import Home from 'pages/luma/Home';
 import Men from 'pages/luma/Men';
+import { Page } from 'playwright';
 
 export default class Pages {
-  get homepage(): Home {
-    return new Home(uiClient.page);
+  constructor(page: Page) {
+    globalThis.homepage = new Home(page);
+    globalThis.men = new Men(page);
   }
+}
 
-  get men(): Men {
-    return new Men(uiClient.page);
-  }
+declare global {
+  var homepage: Home;
+  var men: Men;
 }

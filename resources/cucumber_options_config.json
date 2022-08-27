@@ -5,7 +5,7 @@
     "paths": ["resources/features/**/*.feature"],
     "requireModule": ["ts-node/register"],
     "require": ["./src/context/*.ts", "./src/stepdefs/**/*.ts"],
-    "tags": "not @ignore",
+    "tags": "@ui and not @ignore",
     "worldParameters": {
       "headless": true,
       "browser": "chrome"

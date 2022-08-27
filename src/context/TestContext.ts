@@ -10,7 +10,6 @@ export default class TestContext extends World {
     super(options);
     global.restClient = new RestClient();
     global.uiClient = new UiClient();
-    global.luma = new Pages();
   }
 
   get value(): unknown {
@@ -24,7 +23,7 @@ export default class TestContext extends World {
 setWorldConstructor(TestContext);
 
 declare global {
-  var luma: Pages;
+  var app: Pages;
   var restClient: RestClient;
   var uiClient: UiClient;
   var testContext: TestContext;
