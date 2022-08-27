@@ -8,7 +8,7 @@ Before({ name: 'Initialize Test context' }, function (this: TestContext) {
   global.testContext = this as TestContext;
 });
 
-Before({ tags: '@ui', name: 'Initialize UI Client' }, async function () {
+Before({ tags: '@ui', name: 'Initialize UI Client', }, async function () {
   await uiClient.init(Environment.getUiConfig(this.parameters['browser'], this.parameters['headless']));
   app = new Pages(uiClient.page);
 });

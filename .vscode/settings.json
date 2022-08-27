@@ -2,7 +2,8 @@
     "files.exclude": {
         "**/.git": true,
         "**/node_modules": true,
-        "build": true
+        "build": true,
+        "**/package-lock.json": true
     },
     "cucumberautocomplete.steps": [
         "src/stepdefs/**/*.ts"
@@ -22,14 +23,17 @@
     "typescript.inlayHints.enumMemberValues.enabled": true,
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
     "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": true,
     "[typescript]": {
+        "editor.snippetSuggestions": "none",
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true
     },
     "typescript.inlayHints.parameterTypes.enabled": true,
-    "vsicons.presets.tsOfficial": true,
     "workbench.colorTheme": "Default Dark+",
     "prettier.arrowParens": "always",
     "prettier.endOfLine": "auto",
@@ -48,6 +52,7 @@
     "typescript.suggest.completeFunctionCalls": true,
     "typescript.referencesCodeLens.enabled": true,
     "typescript.referencesCodeLens.showOnAllFunctions": true,
+    "typescript.implementationsCodeLens.enabled": true,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true

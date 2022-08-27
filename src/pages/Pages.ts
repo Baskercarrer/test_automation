@@ -7,6 +7,7 @@ export default class Pages {
   constructor(page: Page) {
     globalThis.homepage = new Home(page);
     globalThis.men = new Men(page);
+    
   }
 }
 
